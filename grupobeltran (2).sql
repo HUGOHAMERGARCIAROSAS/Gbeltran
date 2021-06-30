@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 17-05-2021 a las 08:15:14
+-- Tiempo de generación: 30-06-2021 a las 07:52:34
 -- Versión del servidor: 10.4.14-MariaDB
 -- Versión de PHP: 7.4.11
 
@@ -20,6 +20,33 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `grupobeltran`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `cajas`
+--
+
+CREATE TABLE `cajas` (
+  `id` int(11) NOT NULL,
+  `cliente_id` varchar(250) DEFAULT NULL,
+  `monto` decimal(18,2) DEFAULT NULL,
+  `forma_pago` int(11) DEFAULT NULL,
+  `nro_factura` varchar(50) DEFAULT NULL,
+  `factura` varchar(50) DEFAULT NULL,
+  `monto_pagar` decimal(18,2) DEFAULT NULL,
+  `saldo` decimal(18,2) DEFAULT NULL,
+  `user_insert` varchar(50) NOT NULL,
+  `created_at` timestamp NULL DEFAULT current_timestamp(),
+  `updated_at` timestamp NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `cajas`
+--
+
+INSERT INTO `cajas` (`id`, `cliente_id`, `monto`, `forma_pago`, `nro_factura`, `factura`, `monto_pagar`, `saldo`, `user_insert`, `created_at`, `updated_at`) VALUES
+(1, 'CADMUS TECH 2021', '250.00', 1, '12456', 'factura_1622953262.txt', '1230.00', NULL, 'hugogarciarosas@gmail.com', '2021-06-06 09:21:02', '2021-06-06 09:21:02');
 
 -- --------------------------------------------------------
 
@@ -69,6 +96,34 @@ INSERT INTO `clientes` (`id`, `razon_social`, `responsable`, `estado`, `document
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `combustibles`
+--
+
+CREATE TABLE `combustibles` (
+  `id` int(11) NOT NULL,
+  `lugar` int(11) DEFAULT NULL,
+  `galones` varchar(50) DEFAULT NULL,
+  `precio` decimal(18,2) DEFAULT NULL,
+  `nro_ticket` varchar(10) DEFAULT NULL,
+  `ticket` varchar(250) DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT current_timestamp(),
+  `updated_at` timestamp NULL DEFAULT current_timestamp(),
+  `orden_trabajo_id` int(11) NOT NULL,
+  `activo` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `combustibles`
+--
+
+INSERT INTO `combustibles` (`id`, `lugar`, `galones`, `precio`, `nro_ticket`, `ticket`, `created_at`, `updated_at`, `orden_trabajo_id`, `activo`) VALUES
+(1, 2, '140', '1000.00', '4865', 'ticket_1622954521.txt', '2021-06-06 09:42:01', '2021-06-26 10:05:22', 2, 1),
+(2, 1, '04', '123.00', '256', 'ticket_1624682397.sql', '2021-06-26 09:39:57', '2021-06-26 09:54:09', 1, 0),
+(3, 1, '123', '456.00', '987654', 'ticket_1624683318.sql', '2021-06-26 09:55:18', '2021-06-26 09:55:18', 3, 1);
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `documento_personal`
 --
 
@@ -94,8 +149,40 @@ CREATE TABLE `documento_personal` (
 --
 
 INSERT INTO `documento_personal` (`id`, `user_id`, `tipo_documento`, `documento`, `archivos`, `fecha_emision`, `fecha_vencimiento`, `created_at`, `updated_at`, `usuario_insert`, `usuario_updated`, `usuario_deleted`, `estado`, `activo`) VALUES
-(1, 1, 'Licencia', 'A3', 'documento_personal_1621231191.xlsx', '2021-05-05 05:00:00', '2021-05-27 05:00:00', '2021-05-17 02:49:13', '2021-05-17 11:07:14', 'hugogarciarosas@gmail.com', '', '', 1, 1),
-(2, 3, 'Licencia', 'A2', 'documento_personal_1621228394.xlsx', '2021-05-17 05:00:00', '2021-05-20 05:00:00', '2021-05-17 10:13:14', '2021-05-17 11:13:35', NULL, NULL, 'hugogarciarosas@gmail.com', 0, 1);
+(1, 1, 'Licencia', 'A3', 'documento_personal_1621231191.xlsx', '2021-05-05 05:00:00', '2021-05-27 05:00:00', '2021-07-05 02:49:13', '2021-05-17 11:07:14', 'hugogarciarosas@gmail.com', '', '', 1, 1),
+(2, 3, 'Licencia', 'A2', 'documento_personal_1621228394.xlsx', '2021-05-17 05:00:00', '2021-05-20 05:00:00', '2021-05-17 10:13:14', '2021-05-17 11:13:35', NULL, NULL, 'hugogarciarosas@gmail.com', 0, 1),
+(3, 1, 'dni', '48626692', 'documento_personal_1624690949.sql', '2021-06-26 05:00:00', '2021-06-28 05:00:00', '2021-06-26 12:02:29', '2021-06-26 12:02:29', NULL, NULL, NULL, 1, 1);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `documento_vehiculo`
+--
+
+CREATE TABLE `documento_vehiculo` (
+  `id` int(11) NOT NULL,
+  `vehiculo_id` int(11) NOT NULL,
+  `tipo_documento` varchar(50) NOT NULL,
+  `documento` varchar(50) NOT NULL,
+  `archivos` varchar(250) NOT NULL,
+  `fecha_emision` timestamp NOT NULL DEFAULT current_timestamp(),
+  `fecha_vencimiento` timestamp NOT NULL DEFAULT current_timestamp(),
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `deleted_at` timestamp NULL DEFAULT NULL,
+  `estado` int(11) NOT NULL,
+  `activo` int(11) NOT NULL,
+  `usuario_deleted` varchar(250) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `documento_vehiculo`
+--
+
+INSERT INTO `documento_vehiculo` (`id`, `vehiculo_id`, `tipo_documento`, `documento`, `archivos`, `fecha_emision`, `fecha_vencimiento`, `created_at`, `updated_at`, `deleted_at`, `estado`, `activo`, `usuario_deleted`) VALUES
+(5, 1, 'SEGUROS', 'EDICION', 'documento_vehiculo_1621799674.docx', '2021-05-23 05:00:00', '2021-05-23 05:00:00', '2021-05-24 00:54:34', '2021-05-24 01:16:17', NULL, 1, 1, 'nadal1@gmail.com'),
+(6, 1, 'SEGUROS', 'SOAT', 'documento_vehiculo_1621801012.docx', '2021-05-23 05:00:00', '2022-05-23 05:00:00', '2021-05-24 01:16:52', '2021-05-24 01:16:52', NULL, 1, 1, NULL),
+(7, 1, 'SEGUROS', 'SOAT', 'documento_vehiculo_1621802239.xlsx', '2021-05-23 05:00:00', '2021-05-26 05:00:00', '2021-05-24 01:37:19', '2021-05-24 01:38:06', NULL, 1, 1, 'hugogarciarosas@gmail.com');
 
 -- --------------------------------------------------------
 
@@ -132,6 +219,76 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (1, '2014_10_12_000000_create_users_table', 1),
 (2, '2014_10_12_100000_create_password_resets_table', 1),
 (3, '2019_08_19_000000_create_failed_jobs_table', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `orden_control`
+--
+
+CREATE TABLE `orden_control` (
+  `id` int(11) NOT NULL,
+  `order_id` int(11) NOT NULL,
+  `km_inicial` varchar(50) DEFAULT NULL,
+  `km_final` varchar(50) DEFAULT NULL,
+  `peso_inicial` decimal(18,2) DEFAULT NULL,
+  `peso_final` decimal(18,2) DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT current_timestamp(),
+  `updated_at` timestamp NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `orden_control`
+--
+
+INSERT INTO `orden_control` (`id`, `order_id`, `km_inicial`, `km_final`, `peso_inicial`, `peso_final`, `created_at`, `updated_at`) VALUES
+(1, 1, '120', '120', '80.00', '50.00', '2021-06-06 06:42:01', '2021-06-06 06:42:01'),
+(2, 2, '200', '300', '400.00', '500.00', '2021-06-06 07:37:09', '2021-06-06 07:37:09');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `orders`
+--
+
+CREATE TABLE `orders` (
+  `id` int(11) NOT NULL,
+  `fecha_inicio` timestamp NULL DEFAULT current_timestamp(),
+  `fecha_fin` timestamp NULL DEFAULT current_timestamp(),
+  `empresa_id` int(11) NOT NULL,
+  `cliente_id` int(11) NOT NULL,
+  `conductor_id` int(11) NOT NULL,
+  `ruta_id` int(11) NOT NULL,
+  `vehiculo_id` int(11) NOT NULL,
+  `producto` varchar(250) NOT NULL,
+  `peso_inicial` decimal(18,2) DEFAULT NULL,
+  `monto` decimal(18,2) DEFAULT NULL,
+  `total` decimal(18,2) DEFAULT NULL,
+  `moneda` varchar(50) DEFAULT NULL,
+  `total_soles` decimal(18,2) DEFAULT NULL,
+  `terceros_check` int(11) DEFAULT NULL,
+  `empresa_tercera_id` int(11) DEFAULT NULL,
+  `precio_tercero` decimal(18,2) DEFAULT NULL,
+  `monto_tercero` decimal(18,2) DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT current_timestamp(),
+  `updated_at` timestamp NULL DEFAULT current_timestamp(),
+  `usuario_created` varchar(50) DEFAULT NULL,
+  `usuario_deleted` varchar(50) DEFAULT NULL,
+  `usuario_updated` varchar(50) DEFAULT NULL,
+  `estado` int(11) DEFAULT NULL,
+  `activo` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `orders`
+--
+
+INSERT INTO `orders` (`id`, `fecha_inicio`, `fecha_fin`, `empresa_id`, `cliente_id`, `conductor_id`, `ruta_id`, `vehiculo_id`, `producto`, `peso_inicial`, `monto`, `total`, `moneda`, `total_soles`, `terceros_check`, `empresa_tercera_id`, `precio_tercero`, `monto_tercero`, `created_at`, `updated_at`, `usuario_created`, `usuario_deleted`, `usuario_updated`, `estado`, `activo`) VALUES
+(1, '2021-06-04 05:00:00', '2021-06-04 05:00:00', 1, 2, 1, 1, 1, 'producto 1', '100.00', '30.00', NULL, '1', '3000.00', NULL, 1, NULL, NULL, '2021-06-06 05:39:59', '2021-06-06 05:39:59', NULL, NULL, NULL, 1, 1),
+(2, '2021-06-16 05:00:00', '2021-06-30 05:00:00', 1, 3, 3, 2, 2, 'producto 2', '420.00', '302.00', NULL, NULL, '30200.00', NULL, 1, NULL, NULL, '2021-06-06 07:10:59', '2021-06-26 10:27:50', NULL, NULL, NULL, 1, 1),
+(3, '2021-07-02 05:00:00', '2021-06-16 05:00:00', 1, 2, 1, 1, 1, 'producto 2', '450.00', '250.00', NULL, '1', '200.00', NULL, NULL, NULL, NULL, '2021-06-06 08:05:48', '2021-06-06 08:26:09', NULL, NULL, NULL, 0, 1),
+(4, '2021-06-10 05:00:00', '2021-06-30 05:00:00', 1, 2, 1, 1, 1, 'producto 2', '420.00', '302.00', NULL, NULL, '450.00', NULL, 1, '121312.00', '331.00', '2021-06-06 11:20:18', '2021-06-26 10:26:10', NULL, NULL, NULL, 1, 1),
+(5, '2021-06-13 05:00:00', '2021-06-14 05:00:00', 1, 3, 3, 5, 14, 'producto 2', '100.00', '200.00', NULL, NULL, '3000000.00', NULL, 1, '121312.00', '331.00', '2021-06-14 06:55:02', '2021-06-14 06:55:02', 'hugogarciarosas@gmail.com', NULL, NULL, 1, 1);
 
 -- --------------------------------------------------------
 
@@ -217,6 +374,40 @@ INSERT INTO `permission_role` (`id`, `role_id`, `permission_id`, `created_at`, `
 (46, 2, 7, '2021-05-17 06:35:55', '2021-05-17 06:35:55'),
 (47, 2, 6, '2021-05-17 06:36:12', '2021-05-17 06:36:12'),
 (48, 2, 9, '2021-05-17 06:36:29', '2021-05-17 06:36:29');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `proveedores`
+--
+
+CREATE TABLE `proveedores` (
+  `id` int(11) NOT NULL,
+  `razon_social` varchar(250) DEFAULT NULL,
+  `ruc` varchar(250) DEFAULT NULL,
+  `direccion` varchar(250) DEFAULT NULL,
+  `telefono` varchar(250) DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT current_timestamp(),
+  `updated_at` timestamp NULL DEFAULT current_timestamp(),
+  `usuario_insert` varchar(250) DEFAULT NULL,
+  `usuario_updated` varchar(250) DEFAULT NULL,
+  `usuario_deleted` varchar(250) DEFAULT NULL,
+  `estado` int(11) DEFAULT NULL,
+  `activo` int(11) DEFAULT NULL,
+  `tipo_documento` enum('1','2','3','') DEFAULT NULL,
+  `responsable` varchar(250) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `proveedores`
+--
+
+INSERT INTO `proveedores` (`id`, `razon_social`, `ruc`, `direccion`, `telefono`, `created_at`, `updated_at`, `usuario_insert`, `usuario_updated`, `usuario_deleted`, `estado`, `activo`, `tipo_documento`, `responsable`) VALUES
+(1, 'CADMUS TECH1', '10486266924', 'MZ Y LT 11 , Barrio 5 A', '987654321', '2021-05-24 06:24:18', '2021-05-24 06:38:09', 'hugogarciarosas@gmail.com', 'hugogarciarosas@gmail.com', NULL, 1, 1, '2', 'Nadal Lindley'),
+(2, 'MUNI VLH12', '48626692', 'MZ Y LT 11 , Barrio 5 A , Alto Trujillo, Porvenir', '947476470', '2021-05-24 06:28:39', '2021-05-24 06:44:16', 'hugogarciarosas@gmail.com', 'hugogarciarosas@gmail.com', 'hugogarciarosas@gmail.com', 1, 1, '1', 'HUGO GARCIA ROSAS'),
+(27, 'hugo', '104862626', 'alto truj', '987654321', '2021-05-24 07:43:58', '2021-05-24 07:43:58', NULL, NULL, NULL, 1, 1, '1', 'garcia'),
+(28, 'hamer', '104862626', 'alt truj', '987654321', '2021-05-24 07:43:58', '2021-05-24 07:43:58', NULL, NULL, NULL, 1, 1, '2', 'rosas'),
+(29, 'garcia', '104862626', 'al tr', '987654321', '2021-05-24 07:43:58', '2021-05-24 07:43:58', NULL, NULL, NULL, 1, 1, '3', 'hugo');
 
 -- --------------------------------------------------------
 
@@ -308,6 +499,27 @@ INSERT INTO `rutas` (`id`, `punto_inicial`, `punto_final`, `distancia`, `created
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `sedes`
+--
+
+CREATE TABLE `sedes` (
+  `id` int(11) NOT NULL,
+  `nombre` varchar(250) NOT NULL,
+  `created_at` timestamp NULL DEFAULT current_timestamp(),
+  `updated_at` timestamp NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `sedes`
+--
+
+INSERT INTO `sedes` (`id`, `nombre`, `created_at`, `updated_at`) VALUES
+(1, 'trb', '2021-05-30 06:37:03', '2021-05-30 06:37:03'),
+(2, 'beltran\r\n', '2021-05-30 06:37:03', '2021-05-30 06:37:03');
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `tarifas`
 --
 
@@ -378,9 +590,51 @@ INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `ti
 (7, 'hugo', 'admin@pyrushd.com', NULL, '$2y$10$PMPhSbKQaBPhJ2uE1g1zTeKe/9Fx4DVD7lW63sFeHwiLD0oXj9oJS', 0, '@MiMercado123+', '48626692', '+51947476470', '2021-05-16 05:00:00', NULL, NULL, 'nadalfujitrol@gmail.com', 'nadalfujitrol@gmail.com', NULL, NULL, '2021-05-17 05:37:38', '2021-05-17 05:44:12'),
 (8, 'NADAL 1', 'nadal1@gmail.com', NULL, '$2y$10$db81KdRfK8ilf3IrXk4UCueuK1eG.1QGUuLyMlkviQwvwgY3/E.zq', 1, '123456789', '98765432', '987654321', '2021-05-16 05:00:00', NULL, NULL, 'hugogarciarosas@gmail.com', NULL, NULL, NULL, '2021-05-17 06:32:18', '2021-05-17 06:32:18');
 
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `vehículo`
+--
+
+CREATE TABLE `vehículo` (
+  `id` int(11) NOT NULL,
+  `placa` varchar(50) NOT NULL,
+  `marca` varchar(250) NOT NULL,
+  `carga` varchar(250) NOT NULL,
+  `escala` varchar(250) NOT NULL,
+  `created_at` timestamp NULL DEFAULT current_timestamp(),
+  `updated_at` timestamp NULL DEFAULT current_timestamp(),
+  `propio` int(11) DEFAULT NULL,
+  `usuario_insert` varchar(250) DEFAULT NULL,
+  `usuario_updated` varchar(250) DEFAULT NULL,
+  `usuario_deleted` varchar(250) DEFAULT NULL,
+  `activo` int(11) DEFAULT NULL,
+  `estado` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `vehículo`
+--
+
+INSERT INTO `vehículo` (`id`, `placa`, `marca`, `carga`, `escala`, `created_at`, `updated_at`, `propio`, `usuario_insert`, `usuario_updated`, `usuario_deleted`, `activo`, `estado`) VALUES
+(1, 'VG.7647', 'SCANNIA', '5000', '13', '2021-05-23 22:24:04', '2021-05-23 22:24:04', 1, NULL, NULL, NULL, 1, 1),
+(2, 'QWERTY', 'HYUNDAY', '5000', '13', '2021-05-23 05:00:00', '2021-05-24 04:56:59', 0, 'hugogarciarosas@gmail.com', NULL, NULL, 1, 1),
+(3, '7654', 'COROLA', '5000', '13', '2021-05-19 05:00:00', '2021-05-24 05:02:13', 1, 'hugogarciarosas@gmail.com', NULL, 'hugogarciarosas@gmail.com', 1, 1),
+(14, 'qwerty1', 'scannia', '1500', '14', '2021-05-24 05:28:48', '2021-05-24 05:28:48', 1, NULL, NULL, NULL, 1, 1),
+(15, 'qwerty2', 'scannia', '1500', '14', '2021-05-24 05:28:48', '2021-05-24 05:28:48', 1, NULL, NULL, NULL, 1, 1),
+(16, 'qwerty3', 'scannia', '1500', '14', '2021-05-24 05:28:48', '2021-05-24 05:28:48', 0, NULL, NULL, NULL, 1, 1),
+(17, 'qwerty4', 'scannia', '1500', '14', '2021-05-24 05:28:48', '2021-05-24 05:28:48', 1, NULL, NULL, NULL, 1, 1),
+(18, 'qwerty5', 'scannia', '1500', '14', '2021-05-24 05:28:48', '2021-05-24 05:28:48', 1, NULL, NULL, NULL, 1, 1);
+
 --
 -- Índices para tablas volcadas
 --
+
+--
+-- Indices de la tabla `cajas`
+--
+ALTER TABLE `cajas`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indices de la tabla `clientes`
@@ -389,11 +643,26 @@ ALTER TABLE `clientes`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indices de la tabla `combustibles`
+--
+ALTER TABLE `combustibles`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `orden_trabajo_id` (`orden_trabajo_id`),
+  ADD KEY `lugar` (`lugar`);
+
+--
 -- Indices de la tabla `documento_personal`
 --
 ALTER TABLE `documento_personal`
   ADD PRIMARY KEY (`id`),
   ADD KEY `user_id` (`user_id`);
+
+--
+-- Indices de la tabla `documento_vehiculo`
+--
+ALTER TABLE `documento_vehiculo`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `documento_vehiculo_ibfk_1` (`vehiculo_id`);
 
 --
 -- Indices de la tabla `failed_jobs`
@@ -405,6 +674,19 @@ ALTER TABLE `failed_jobs`
 -- Indices de la tabla `migrations`
 --
 ALTER TABLE `migrations`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `orden_control`
+--
+ALTER TABLE `orden_control`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `order_id` (`order_id`);
+
+--
+-- Indices de la tabla `orders`
+--
+ALTER TABLE `orders`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -428,6 +710,12 @@ ALTER TABLE `permission_role`
   ADD KEY `permission_id` (`permission_id`);
 
 --
+-- Indices de la tabla `proveedores`
+--
+ALTER TABLE `proveedores`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indices de la tabla `roles`
 --
 ALTER TABLE `roles`
@@ -449,6 +737,12 @@ ALTER TABLE `rutas`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indices de la tabla `sedes`
+--
+ALTER TABLE `sedes`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indices de la tabla `tarifas`
 --
 ALTER TABLE `tarifas`
@@ -463,8 +757,20 @@ ALTER TABLE `users`
   ADD UNIQUE KEY `users_email_unique` (`email`);
 
 --
+-- Indices de la tabla `vehículo`
+--
+ALTER TABLE `vehículo`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT de las tablas volcadas
 --
+
+--
+-- AUTO_INCREMENT de la tabla `cajas`
+--
+ALTER TABLE `cajas`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de la tabla `clientes`
@@ -473,10 +779,22 @@ ALTER TABLE `clientes`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
+-- AUTO_INCREMENT de la tabla `combustibles`
+--
+ALTER TABLE `combustibles`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
 -- AUTO_INCREMENT de la tabla `documento_personal`
 --
 ALTER TABLE `documento_personal`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT de la tabla `documento_vehiculo`
+--
+ALTER TABLE `documento_vehiculo`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT de la tabla `failed_jobs`
@@ -491,6 +809,18 @@ ALTER TABLE `migrations`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
+-- AUTO_INCREMENT de la tabla `orden_control`
+--
+ALTER TABLE `orden_control`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT de la tabla `orders`
+--
+ALTER TABLE `orders`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
 -- AUTO_INCREMENT de la tabla `permissions`
 --
 ALTER TABLE `permissions`
@@ -501,6 +831,12 @@ ALTER TABLE `permissions`
 --
 ALTER TABLE `permission_role`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=49;
+
+--
+-- AUTO_INCREMENT de la tabla `proveedores`
+--
+ALTER TABLE `proveedores`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
 
 --
 -- AUTO_INCREMENT de la tabla `roles`
@@ -521,6 +857,12 @@ ALTER TABLE `rutas`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
+-- AUTO_INCREMENT de la tabla `sedes`
+--
+ALTER TABLE `sedes`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
 -- AUTO_INCREMENT de la tabla `tarifas`
 --
 ALTER TABLE `tarifas`
@@ -533,14 +875,38 @@ ALTER TABLE `users`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
+-- AUTO_INCREMENT de la tabla `vehículo`
+--
+ALTER TABLE `vehículo`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+
+--
 -- Restricciones para tablas volcadas
 --
+
+--
+-- Filtros para la tabla `combustibles`
+--
+ALTER TABLE `combustibles`
+  ADD CONSTRAINT `combustibles_ibfk_1` FOREIGN KEY (`orden_trabajo_id`) REFERENCES `orders` (`id`);
 
 --
 -- Filtros para la tabla `documento_personal`
 --
 ALTER TABLE `documento_personal`
   ADD CONSTRAINT `documento_personal_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`);
+
+--
+-- Filtros para la tabla `documento_vehiculo`
+--
+ALTER TABLE `documento_vehiculo`
+  ADD CONSTRAINT `documento_vehiculo_ibfk_1` FOREIGN KEY (`vehiculo_id`) REFERENCES `vehículo` (`id`);
+
+--
+-- Filtros para la tabla `orden_control`
+--
+ALTER TABLE `orden_control`
+  ADD CONSTRAINT `orden_control_ibfk_1` FOREIGN KEY (`order_id`) REFERENCES `orders` (`id`);
 
 --
 -- Filtros para la tabla `permission_role`
