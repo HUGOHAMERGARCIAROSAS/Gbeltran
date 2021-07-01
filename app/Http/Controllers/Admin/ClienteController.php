@@ -11,8 +11,8 @@ use Maatwebsite\Excel\Concerns\ToModel;
 use App\Imports\ClientesImport;
 use App\Exports\ClientesExport;
 use Maatwebsite\Excel\Concerns\WithHeadings;
-use Barryvdh\DomPDF\PDF;
 use Illuminate\Support\Facades\Gate;
+use Barryvdh\DomPDF\Facade as PDF;
 
 
 class ClienteController extends Controller

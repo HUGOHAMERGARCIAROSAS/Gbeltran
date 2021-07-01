@@ -23,6 +23,7 @@
                                     <th class="text-center">Cliente</th>
                                     <th class="text-center">Moneda</th>
                                     <th class="text-center">Monto</th>
+                                    <th class="text-center">Monto Pendiente</th>
                                     <th class="text-center">Estado</th>
                                     <th class="text-center">Opciones</th>
                                 </tr>
@@ -39,6 +40,7 @@
                                     @if ($item->moneda==0)
                                         <td class="text-center">USD</td>
                                     @endif
+                                    <td class="text-center">{{$item->monto}}</td>
                                     <td class="text-center">{{$item->monto}}</td>
                                     @if ($item->estado==1)
                                     <td class="text-center">PENDIENTE</td>

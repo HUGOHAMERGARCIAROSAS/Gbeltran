@@ -1,0 +1,49 @@
+Agregación:
+-FechaCaducidad en la tabla users
+-fechaTramite en la tabla Documento vehiculo
+-Eliminar peso inicial del Viaje
+
+Observaciones:
+-Agregar un boton donde se vea el peso inicial, final, kilometros del viaje.
+-Agregar una columna de Saldo indicando cuanto falta pagar al cliente,No cambia a estado pagado
+
+
+
+
+-CLIENTES
+-USUARIOS
+-PROVEEDOR
+
+-UNIDADES->Falta agregar campos
+
+
+-DOCUMENTO PERSONAL
+-DOCUMENTO VEHICULO
+
+
+-RUTAS
+-COMBUSTIBLE
+-CAJA
+
+
+...TERCERO(TELEFONO)
+Precio tercero, Precio cliente,Facturas,(No habilitado)No editable cuando esten los dosprecios(Se agrego a la vista facturas)
+
+Agregar documentos de vehiculo archivos en paralelos
+
+Combustible(Precio,galonaje,kilometraje)
+-Lo que se va a pagar a xliente
+
+Compra
+Gastos 
+
+Requerimiento
+
+orden de servicio
+de compra
+(Re)
+
+Cuantos días dura el viaje
+
+
+abastecimientoCombustible.index->Abastecimiento de Combustible

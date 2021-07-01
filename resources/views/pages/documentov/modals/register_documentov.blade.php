@@ -76,6 +76,30 @@
                         </select>
                     </div>
                 </div>
+                <div class="row">
+                    <div class="table-responsive">
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Tipo</th>
+                                    <th>Nro Documento</th>
+                                    <th>Documento</th>
+                                    <th>Opciones</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th></th>
+                                    <th></th>
+                                    <th></th>
+                                    <th></th>
+                                    <th><button type="button" class="btn btn-sm btn-danger"> <i class="fa fa-remove"></i> </button></th>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
             </div>
             <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>

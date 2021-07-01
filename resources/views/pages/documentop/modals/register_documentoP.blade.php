@@ -28,7 +28,11 @@
                 <div class="row">
                     <div class="col-md-6">
                         <label for="">Tipo de Documento:</label>
-                        <input type="text" class="form-control" name="tipo_documento">
+                        <select name="tipo_documento" id="" class="form-control">
+                            <option value="DNI">DNI</option>
+                            <option value="BREVETE">BREVETE</option>
+                        </select>
+                        
                     </div>
                     <div class="col-md-6">
                         <label for="">Documento:</label>
@@ -49,6 +53,30 @@
                     <div class="col-md-6">
                         <label for="">Fecha de Vencimiento:</label>
                         <input type="date" class="form-control" name="fecha_vencimiento">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="table-responsive">
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Tipo</th>
+                                    <th>Nro Documento</th>
+                                    <th>Documento</th>
+                                    <th>Opciones</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th></th>
+                                    <th></th>
+                                    <th></th>
+                                    <th></th>
+                                    <th><button type="button" class="btn btn-sm btn-danger"> <i class="fa fa-remove"></i> </button></th>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>

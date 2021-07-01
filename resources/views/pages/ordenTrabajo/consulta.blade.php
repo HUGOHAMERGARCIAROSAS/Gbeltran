@@ -85,12 +85,15 @@
 <script>
      if(document.getElementById('isAgeSelected').checked) {
     $("#txtAge").show();
+    $("#txtAge2").show();
 } else {
     $("#txtAge").hide();
+    $("#txtAge2").hide();
 }
 
 $('#isAgeSelected').click(function() {
     $("#txtAge").toggle(this.checked);
+    $("#txtAge2").toggle(this.checked);
 });
 </script>
 @endsection

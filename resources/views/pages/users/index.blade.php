@@ -10,7 +10,7 @@
             <div class="card" style="background: #FFFFFF">
                 <div class="header" >
                     <div style="float: left">
-                        <h2>RUTAS</h2>
+                        <h2>USUARIO</h2>
                     </div>
                     <div style="float: right">
                         <button type="button" class="btn btn-warning" style="height: 40px" data-toggle="modal" data-target="#registerUsuario">

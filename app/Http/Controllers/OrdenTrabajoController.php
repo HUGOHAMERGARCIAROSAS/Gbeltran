@@ -53,7 +53,7 @@ class OrdenTrabajoController extends Controller
         $order->ruta_id  = $request->ruta_id;
         $order->vehiculo_id  = $request->vehiculo_id;
         $order->producto  = $request->producto;
-        $order->peso_inicial  = $request->peso_inicial;
+       // $order->peso_inicial  = $request->peso_inicial;
         $order->monto  = $request->monto;
         $order->total  = $request->total;
         $order->moneda  = $request->moneda;
@@ -102,7 +102,7 @@ class OrdenTrabajoController extends Controller
             $order->km_inicial  = $request->km_inicial;
             $order->km_final  = $request->km_final;
             $order->order_id  = $request->order_id;
-            $order->peso_inicial  = $request->peso_inicial;
+           $order->peso_inicial  = $request->peso_inicial;
             $order->peso_final  = $request->peso_final;
             $order->save();
             return back();

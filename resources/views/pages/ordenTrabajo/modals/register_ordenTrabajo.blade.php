@@ -81,10 +81,6 @@
                 </div>
                 <div class="row">
                     <div class=" col-md-4">
-                        <label>Peso inicial</label>
-                        <input type="text" class=" form-control form-control-sm" name="peso_inicial">
-                    </div>
-                    <div class=" col-md-4">
                         <label>Monto</label>
                         <input type="text" class=" form-control form-control-sm" name="monto">
                     </div>
@@ -111,10 +107,24 @@
                         <input type="text" class=" form-control form-control-sm" name="precio_tercero">
                     </div>
                     <div class=" col-md-4">
-                        <label >Monto Tercero</label>
+                        <label >Precio Cliente</label>
                         <input type="text"  class=" form-control form-control-sm" name="monto_tercero">
                     </div>
                 </div>
+                <div class="row" id="txtAge2" style="display: none">
+                    <div class=" col-md-4">
+                        
+                    </div>
+                    <div class=" col-md-4">
+                        <label >Factura Tercero</label>
+                        <input type="file" class=" form-control form-control-sm" name="factura_tercero">
+                    </div>
+                    <div class=" col-md-4">
+                        <label >Factura Cliente</label>
+                        <input type="file"  class=" form-control form-control-sm" name="factura_cliente">
+                    </div>
+                </div>
+                
             </div>
             <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>

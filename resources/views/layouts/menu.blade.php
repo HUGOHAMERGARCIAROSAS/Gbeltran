@@ -42,21 +42,6 @@
                             </ul>
                         </li>
                         <li>
-                            <a href="#App" class="has-arrow"><i class="icon-grid"></i> <span>MOVIMIENTOS</span></a>
-                            <ul>
-                                @can('haveaccess','rutas.index')
-                                <li class="active"><a href="{{route('rutas.index')}}">Rutas</a></li>
-                                @endcan
-                                @can('haveaccess','tarifas.index')
-                                <li class="active"><a href="{{route('tarifas.index')}}">Tarifas</a></li>
-                                @endcan
-                                <li class="active"><a href="{{route('abastecimientoCombustible.index')}}">Abastecimiento de Combustible</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="#FileManager" class="has-arrow"><i class="icon-folder"></i> <span>SERVICIOS</span></a>
-                        </li>
-                        <li>
                             <a href="#Personal" class="has-arrow"><i class="icon-globe"></i> <span>PERSONAL</span></a>
                             <ul>
                                 @can('haveaccess','roles.index')
@@ -68,12 +53,23 @@
                             </ul>
                         </li>
                         <li>
-                            <a href="#Widgets" class="has-arrow"><i class="icon-puzzle"></i> <span>OPERACIONES</span></a>
+                            <a href="#Widgets" class="has-arrow"><i class="icon-puzzle"></i> <span>PROGRAMACIÓN</span></a>
                             <ul>
-                                <li class="active"><a href="{{route('viajes.index')}}">Orden de Trabajo</a></li>
-                                <li class="active"><a href="{{route('cajas.index')}}">Caja</a></li>
+                                <li class="active"><a href="{{route('unidades.index')}}">Unidades</a></li>
+                                @can('haveaccess','rutas.index')
+                                <li class="active"><a href="{{route('rutas.index')}}">Rutas</a></li>
+                                @endcan
+                                <li class="active"><a href="{{route('viajes.index')}}">Programación de unidades</a></li>
+                                
                             </ul>
                         </li>
+                        <li>
+                            <a href="#Widgets" class="has-arrow"><i class="icon-puzzle"></i> <span>CAJA</span></a>
+                            <ul>
+                                <li class="active"><a href="{{route('cajas.index')}}">Cobros Pendientes</a></li>
+                                <li class="active"><a href="">Pagos Pendientes</a></li>
+                            </ul>
+                        </li>   
                         <li>
                             <a href="#Widgets" class="has-arrow"><i class="icon-puzzle"></i> <span>ALMACEN</span></a>
                         </li>
@@ -82,9 +78,6 @@
                         </li>
                         <li>
                             <a href="{{route('proveedores.index')}}" class="has-arrow"><i class="icon-folder"></i> <span>PROVEEDORES</span></a>
-                        </li>
-                        <li>
-                            <a href="{{route('unidades.index')}}" class="has-arrow"><i class="icon-puzzle"></i> <span>UNIDADES</span></a>
                         </li>
                         <li>
                             <a href="#" class="has-arrow"><i class="icon-globe"></i> <span>DOCUMENTOS</span></a>

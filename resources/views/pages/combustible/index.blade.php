@@ -24,7 +24,7 @@
                             <thead>
                                 <tr>
                                     <th class="text-center">Orden de trabajo</th>
-                                    <th class="text-center">Ruta</th>
+                                    <th class="text-center">Lugar</th>
                                     <th class="text-center">Galones</th>
                                     <th class="text-center">Total</th>
                                     <th class="text-center">Opciones</th>
@@ -34,7 +34,13 @@
                                 @foreach ($combustibles as $item)
                                     <tr>
                                         <td class="text-center">{{str_pad($item->orders->id, 6, "0", STR_PAD_LEFT)}}</td>
-                                        <td class="text-center">{{$item->rutas->punto_inicial}} - {{$item->rutas->punto_final}}</td>
+                                        @if($item->lugar==1)
+                                            <td class="text-center">TRUJILLO</td>
+                                        @elseif($item->lugar==2)
+                                            <td class="text-center">BAGUA</td>
+                                        @else
+                                            <td class="text-center">OTROS</td>
+                                        @endif
                                         <td class="text-center">{{$item->galones}}</td>
                                         <td class="text-center">{{$item->precio}}</td>
                                         <td class="text-center">

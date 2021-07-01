@@ -1,4 +1,5 @@
-<div class="modal fade" id="registerAbastecimiento" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+@foreach($orders as $item)
+<div class="modal fade" id="combustibleOrdenTrabajo{{ $item->id }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
@@ -15,6 +16,9 @@
                         padding-top: 10px;
                     }
                 </style>
+                <select class=" form-control form-control-sm" name="orden_trabajo_id" style="display: none">
+                    <option value="{{$item->id}}">{{ $item->id }}</option>
+                </select>
                 <div class="row">
                     <div class="col-md-6">
                         <label>Lugar</label>
@@ -25,22 +29,18 @@
                         </select>
                     </div>
                     <div class="col-md-6">
-                        <label>Orden de Pago</label>
-                        <select class=" form-control form-control-sm" name="orden_trabajo_id">
-                            @foreach ($ordenes as $orden)
-                            <option value="{{$orden->id}}">{{str_pad($orden->id, 6, "0", STR_PAD_LEFT)}}</option>
-                            @endforeach
-                        </select>
+                            <label>Galones</label>
+                            <input type="text" class=" form-control form-control-sm" name="galones">                 
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-md-6">
-                        <label>Precio</label>
-                        <input type="text" class=" form-control form-control-sm" name="precio">
+                        <label>Kilometros</label>
+                        <input type="text" class=" form-control form-control-sm" name="kilometros">
                     </div>
                     <div class="col-md-6">
-                        <label>Galones</label>
-                        <input type="text" class=" form-control form-control-sm" name="galones">
+                        <label>Precio</label>
+                        <input type="text" class=" form-control form-control-sm" name="precio">
                     </div>
                 </div>
                 <div class="row">
@@ -53,6 +53,31 @@
                         <input type="file" class="form-control form-control-sm" name="ticket">
                     </div>
                 </div>
+                <br>
+                <div class="table-responsive">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Lugar</th>
+                                <th>Galones</th>
+                                <th>Kilometros</th>
+                                <th>Precio</th> 
+                                <th>Opciones</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th></th>
+                                <th></th>
+                                <th></th>
+                                <th></th>
+                                <th></th>
+                                <th><button type="button" class="btn btn-sm btn-danger"> <i class="fa fa-remove"></i> </button></th>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
             <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
@@ -62,3 +87,4 @@
       </div>
     </div>
   </div>
+@endforeach

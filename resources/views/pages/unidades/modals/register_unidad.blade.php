@@ -1,5 +1,5 @@
 <div class="modal fade" id="registerUnidad" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
+    <div class="modal-dialog modal-lg" role="document">
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title" id="exampleModalLabel">REGISTRAR UNIDAD </h5>
@@ -16,49 +16,119 @@
                     }
                 </style>
                 <div class="row">
-                    <div class="col-md-6">
+                  <div class="col-md-4">
+                    <label for="">Unidad:</label>
+                    <select class=" form-control" id="propio">
+                      <option value="1" selected>PROPIO</option>
+                      <option value="2">ALQUILADO</option>
+                      <option value="3">TERCIARIO</option>
+                    </select>   
+                  </div>
+                    <div class="col-md-4">
                         <label for="">Placa:</label>
                         <input type="text" class="form-control" name="placa">
                     </div>
-                    <div class="col-md-6">
-                        <label for="">Marca:</label>
-                        <input type="text" class="form-control" name="marca">
-                    </div>
+                    <div class="col-md-4">
+                      <label for="">Año Fabricación:</label>
+                      <input type="text" class="form-control" name="">
+                  </div>
                 </div>
                 <div class="row">
-                    <div class="col-md-6">
-                        <label for="">Carga:</label>
+                  <div class="col-md-4">
+                    <label for="">Clase:</label>
+                    <input type="text" class="form-control" name="">
+                  </div>
+                  <div class="col-md-4">
+                    <label for="">Marca:</label>
+                    <input type="text" class="form-control" name="marca">
+                  </div>
+                  <div class="col-md-4">
+                    <label for="">Modelo:</label>
+                    <input type="text" class="form-control" name="">
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-4">
+                    <label for="">Combustible:</label>
+                    <input type="text" class="form-control" name="carga">
+                  </div>
+                    <div class="col-md-4">
+                        <label for="">Carroceria:</label>
                         <input type="text" class="form-control" name="carga">
                     </div>
-                    <div class="col-md-6">
-                        <label for="">Escala:</label>
+                    <div class="col-md-4">
+                        <label for="">Ejes:</label>
                         <input type="text" class="form-control" name="escala">
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-md-6">
-                        <label for="">Fecha de Registro:</label>
-                        <input type="date" class="form-control" name="created_at">
+                  <div class="col-md-4">
+                    <label for="">Color:</label>
+                    <input type="text" class="form-control" name="">
+                  </div>
+                  <div class="col-md-4">
+                    <label for="">Ruedas:</label>
+                    <input type="text" class="form-control" name="">
+                  </div>
+                  <div class="col-md-4">
+                    <label for="">Nº de Motor:</label>
+                    <input type="text" class="form-control" name="">
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-4">
+                    <label for="">Cilindros:</label>
+                    <input type="text" class="form-control" name="">
+                  </div>
+                  <div class="col-md-4">
+                    <label for="">Nº Serie Chasis:</label>
+                    <input type="text" class="form-control" name="">
+                  </div>
+                  <div class="col-md-4">
+                    <label for="">Carreta:</label>
+                    <input type="text" class="form-control" name="">
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-4">
+                    <label for="">Tracto:</label>
+                    <input type="text" class="form-control" name="">
+                  </div>
+                  <div class="col-md-4">
+                    <label for="">Carga Útil(Kg):</label>
+                    <input type="text" class="form-control" name="">
+                  </div>
+                  <div class="col-md-4">
+                    <label for="">Peso Seco(Kg):</label>
+                    <input type="text" class="form-control" name="">
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-4">
+                    <label for="">Peso Bruto(Kg):</label>
+                    <input type="text" class="form-control" name="">
+                  </div>
+                   
+                    <div class="col-md-4">
+                      <label for="">Año Modelo:</label>
+                      <input type="text" class="form-control" name="">
                     </div>
-                    <div class="col-md-6">
-                        <label class="form-check-label">Propio?:</label>
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="propio" id="gridRadios1" value="1" checked>
-                            <label class="form-check-label" for="gridRadios1">
-                              PROPIO
-                            </label>
-                          </div>
-                          <div class="form-check">
-                            <input class="form-check-input" type="radio" name="propio" id="gridRadios2" value="0">
-                            <label class="form-check-label" for="gridRadios2">
-                              ALQUILADO
-                            </label>
-                          </div>
-                    </div>
+                    <div class="col-md-4">
+                      <label for="">Fecha de Registro:</label>
+                      <input type="date" class="form-control" name="created_at">
+                  </div>
                 </div>
                 <div class="row">
                     <div class="col-md-12">
                         <input type="hidden" class="form-control" name="usuario_insert" value="{{auth()->user()->email}}">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                      <label>Empresa</label>
+                      <select class=" form-control">
+                        <option value="Empresa">Empresa</option>
+                      </select>
                     </div>
                 </div>
             </div>

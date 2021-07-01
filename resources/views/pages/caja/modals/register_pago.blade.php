@@ -23,7 +23,7 @@
                         <input type="text" class=" form-control form-control-sm" name="cliente_id" value="{{$item->clientes->razon_social}}">
                     </div>
                     <div class="col-md-4">
-                        <label>Monto</label>
+                        <label>Monto Pendiente</label>
                         <input type="text" id="txt_campo_1" onchange="sumar(this.value);" class=" form-control form-control-sm" name="monto" value="{{$item->monto}}">
                     </div>
                     <div class="col-md-4">

@@ -41,7 +41,15 @@
                                 <tr>
                                     <td class="text-center">{{$key+1}}</td>
                                     <td class="text-center">{{$item->vehiculo->placa}}</td>
-                                    <td class="text-center">{{$item->tipo_documento}}</td>
+                                    @if ($item->tipo_documento==1) 
+                                        <td class="text-center">Soat</td>
+                                    @elseif ($item->tipo_documento==2) 
+                                        <td class="text-center">Revisión tècnica</td>
+                                    @elseif ($item->tipo_documento==3) 
+                                        <td class="text-center">Bonificación Neumatica</td> 
+                                    @else 
+                                        <td class="text-center">Tarjetas internacionales</td>
+                                    @endif 
                                     <td class="text-center">{{$item->documento}}</td>
                                     <td class="text-center"><a href="{{asset('/documentos/vehiculo/'.$item->archivos)}}"><i class="fa fa-download"></i> Descargar Documento</a></td>
                                     <td class="text-center">{{date("d-m-Y", strtotime($item->fecha_emision))}}</td>
