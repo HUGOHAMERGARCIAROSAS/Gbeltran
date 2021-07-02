@@ -10,9 +10,21 @@
             <div class="card" style="background: #FFFFFF">
                 <div class="header" >
                     <div style="float: left">
-                        <h2>CAJA</h2>
+                        <h2>CAJA iuhiuh</h2>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <label>Cobros: </label>
+                        </div>
+                        <div class="col-md-4">
+                            <select>
+                                <option selected>PENDIENTE</option>
+                                <option>CANCELADO</option>
+                            </select>
+                        </div>
                     </div>
                 </div>
+                
                 <div class="body">
                     <div class="table-responsive">
                         <table class="table table-bordered table-hover js-basic-example dataTable table-custom">
