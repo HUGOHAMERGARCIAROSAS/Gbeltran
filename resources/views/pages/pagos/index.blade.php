@@ -10,7 +10,7 @@
             <div class="card" style="background: #FFFFFF">
                 <div class="header" >
                     <div style="float: left">
-                        <h2>REGISTRO DE COBROS</h2>
+                        <h2>REGISTRO DE PAGOS</h2>
                     </div>
                     
                 </div>
@@ -45,33 +45,21 @@
                                 </tr>
                             </thead>
                             <tbody> 
-                                @foreach ($orders as $key=>$item)
                                 <tr>
-                                    <td class="text-center">{{$key+1}}</td>
-                                    <td class="text-center">{{str_pad($item->id, 6, "0", STR_PAD_LEFT)}}</td>
-                                    <td class="text-center">{{$item->clientes->razon_social}}</td>
-                                    @if ($item->moneda==1)
-                                        <td class="text-center">PEN</td>
-                                    @endif
-                                    @if ($item->moneda==0)
-                                        <td class="text-center">USD</td>
-                                    @endif
-                                    <td class="text-center">{{$item->monto}}</td>
-                                    <td class="text-center">{{$item->monto}}</td>
-                                    @if ($item->estado==1)
-                                    <td class="text-center">PENDIENTE</td>
-                                    @endif
-                                    @if ($item->estado==0)
-                                    <td class="text-center">CANCELADO</td>
-                                    @endif
+                                    <td class="text-center"></td>
+                                    <td class="text-center"></td>
+                                    <td class="text-center"></td>
+                                    <td class="text-center"></td>
+                                    <td class="text-center"></td>
+                                    <td class="text-center"></td>
+                                    <td class="text-center"></td>
                                     <td class="text-center">
                                         {{-- <a href="{{route('cajas.edit',$item->id)}}" class="btn btn-sm btn-info"><i class="fa fa-money"></i></a> --}}
-                                        <button type="button" class="btn btn-sm btn-info" data-toggle="modal" data-target="#registerPago{{$item->id}}"> 
+                                        <button type="button" class="btn btn-sm btn-info"> 
                                             <i class="fa fa-money"></i>
                                          </button>
                                     </td>
-                                </tr> 
-                                @endforeach                              
+                                </tr>                            
                             </tbody>
                         </table>
                     </div>
@@ -79,7 +67,6 @@
             </div>
         </div>
     </div>
-    @include('pages.caja.modals.register_pago')
 </div>
 @endsection
 @section('js')

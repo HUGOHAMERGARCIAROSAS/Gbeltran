@@ -20,8 +20,7 @@
                     <label for="">Unidad:</label>
                     <select class=" form-control" id="propio">
                       <option value="1" selected>PROPIO</option>
-                      <option value="2">ALQUILADO</option>
-                      <option value="3">TERCIARIO</option>
+                      <option value="2">TERCIARIO</option>
                     </select>   
                   </div>
                     <div class="col-md-4">

@@ -98,6 +98,7 @@ Route::put('/ordenTrabajo/delete/{id}', 'OrdenTrabajoController@updateEstado')->
 
 //CAJA
 Route::resource('/caja','CajaController')->names('cajas');
+Route::get('/pagos','CajaController@pagos');
 
 //ABASTECIMIENTO DE COMBUSTIBLE
 Route::resource('combustible','CombustibleController')->names('abastecimientoCombustible');
@@ -110,3 +111,6 @@ Route::get('clientesv-list-excel', 'HomeController@exportExcelCV')->name('client
 Route::get('clientesnv-list-excel', 'HomeController@exportExcelCNV')->name('clientes.novigentes.excel');
 Route::get('clientesof-list-excel', 'HomeController@exportExcelOF')->name('ordenes.facturadas.excel');
 Route::get('clientesnof-list-excel', 'HomeController@exportExcelNoOF')->name('ordenes.no.facturadas.excel');
+
+//EMPRESAS TERCIARIAS 
+Route::resource('terciarios','EmpresasTerciariasController')->names('terciarios');

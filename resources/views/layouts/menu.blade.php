@@ -59,6 +59,7 @@
                                 @can('haveaccess','rutas.index')
                                 <li class="active"><a href="{{route('rutas.index')}}">Rutas</a></li>
                                 @endcan
+                                <li class="active"><a href="{{ route('terciarios.index') }}">Empresas terciarias</a></li>
                                 <li class="active"><a href="{{route('viajes.index')}}">Programación de unidades</a></li>
                                 
                             </ul>
@@ -67,7 +68,7 @@
                             <a href="#Widgets" class="has-arrow"><i class="icon-puzzle"></i> <span>CAJA</span></a>
                             <ul>
                                 <li class="active"><a href="{{route('cajas.index')}}">Cobros Pendientes</a></li>
-                                <li class="active"><a href="">Pagos Pendientes</a></li>
+                                <li class="active"><a href="/pagos">Pagos Pendientes</a></li>
                             </ul>
                         </li>   
                         <li>

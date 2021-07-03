@@ -18,6 +18,10 @@ class CajaController extends Controller
         $orders = Order::where('activo','1')->get();
         return view('pages.caja.index')->with(compact('orders'));
     }
+    public function pagos()
+    {
+        return view('pages.pagos.index');
+    }
 
     public function edit($id, Request $request)
     {

@@ -51,7 +51,6 @@
                                     <th class="text-center">Moneda</th>
                                     <th class="text-center">Importe</th>
                                     <th class="text-center">Utilidad</th>
-                                    <th class="text-center">Estado</th>
                                     <th class="text-center">Opciones</th>
                                 </tr>
                             </thead>
@@ -73,16 +72,11 @@
                                     @endif
                                     <td class="text-center">{{$item->monto}}</td>
                                     <td  class="text-center"></td>
-                                    @if ($item->estado==1)
-                                    <td class="text-center">PENDIENTE</td>
-                                    @endif
-                                    @if ($item->estado==0)
-                                    <td class="text-center">CANCELADO</td>
-                                    @endif
                                     <td class="text-center">
                                         <button type="button" class="btn btn-sm btn-info" data-toggle="modal" data-target="#registerKilometrosPesos{{$item->id}}"> <i class="fa fa-eye"></i> </button>                            
                                         <button type="button" class="btn btn-sm btn-primary" data-toggle="modal" data-target="#combustibleOrdenTrabajo{{$item->id}}"><i class="fa fa-bus"></i></button>
                                         <button type="button" class="btn btn-sm btn-warning" data-toggle="modal" data-target="#OtrosGastosOrdenTrabajo{{$item->id}}"><i class="fa fa-bars"></i></button>
+                                        <button type="button" class="btn btn-sm btn-primary" data-toggle="modal" data-target="#saldoOrdenTrabajo{{$item->id}}"><i class="fa fa-money"></i></button>
                                         <button type="button" class="btn btn-sm btn-success" data-toggle="modal" data-target="#updateOrdenTrabajo{{$item->id}}"> <i class=" fa fa-edit"></i> </button>
                                     </td>
                                 </tr>
@@ -99,6 +93,7 @@
     @include('pages.ordenTrabajo.modals.update_ordenTrabajo')
     @include('pages.ordenTrabajo.modals.combustible')
     @include('pages.ordenTrabajo.modals.OtrosGastosOrdenTrabajo')
+    @include('pages.ordenTrabajo.modals.saldo')
 
 </div>
 @endsection
