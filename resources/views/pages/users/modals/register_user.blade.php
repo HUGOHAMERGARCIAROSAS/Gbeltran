@@ -1,5 +1,5 @@
 <div class="modal fade" id="registerUsuario" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
+    <div class="modal-dialog modal-lg" role="document">
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title" id="exampleModalLabel">REGISTRAR USUARIO </h5>
@@ -22,49 +22,45 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-md-12">
-                        <label for="">Email:</label>
-                        <input type="email" class="form-control" name="email">
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-12">
-                        <label for="">Contraseña:</label>
-                        <input type="password" class="form-control" name="password">
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-12">
+                    <div class="col-md-6">
                         <label for="">DNI:</label>
                         <input type="text" class="form-control" name="dni">
                     </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-12">
-                        <label for="">Fecha de caducidad:</label>
-                        <input type="date" class="form-control" name="fechaCaducidad">
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-12">
+                    <div class="col-md-6">
                         <label for="">Teléfono:</label>
                         <input type="text" class="form-control" name="telefono">
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-md-12">
+                    <div class="col-md-6">
                         <label for="">Fecha Ingreso:</label>
                         <input type="date" class="form-control" name="fecha_ingreso">
                     </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-12">
+                    <div class="col-md-6">
                         <label for="">Rol:</label>
                         <select name="role_id" id="" class='form-control'>
                             @foreach ($roles as $rol)
                                 <option value="{{$rol->id}}">{{$rol->name}}</option>
                             @endforeach
                         </select>
+                    </div>
+                </div>
+                <div class="row">
+                    <div style="margin: auto">
+                        <input type="checkbox"  id="">
+                        <label>Terceros</label>
+                    </div>
+                </div>
+                <hr>
+                <label>USUARIO</label>
+                <div class="row">
+                    <div class="col-md-6">
+                        <label for="">Email:</label>
+                        <input type="email" class="form-control" name="email">
+                    </div>
+                    <div class="col-md-6">
+                        <label for="">Contraseña:</label>
+                        <input type="password" class="form-control" name="password">
                     </div>
                 </div>
                 <div class="row">
