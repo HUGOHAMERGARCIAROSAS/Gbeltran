@@ -14,7 +14,7 @@
                     </div>
                     <div style="float: right">
                         <button type="button" class="btn btn-warning" style="height: 40px" data-toggle="modal" data-target="#registerTercero">
-                            <i class="fa fa-plus"></i> NUEVO TERCERO
+                            <i class="fa fa-plus"></i> NUEVO PROVEEDOR PRODUCTO
                         </button>
                     </div>
                 </div>
@@ -58,9 +58,9 @@
             </div>
         </div>
     </div>
-    @include('pages.terciarios.modals.register_cliente')
-    @include('pages.terciarios.modals.editar_cliente')
-    @include('pages.terciarios.modals.eliminar_cliente')
+    @include('pages.proproducto.modals.register_cliente')
+    @include('pages.proproducto.modals.editar_cliente')
+    @include('pages.proproducto.modals.eliminar_cliente')
 </div>
 @endsection
 @section('js')

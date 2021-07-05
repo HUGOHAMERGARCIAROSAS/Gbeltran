@@ -39,6 +39,8 @@
                                 @can('haveaccess','clientes.index')
                                 <li class="active"><a href="{{route('clientes.index')}}">Listado de Clientes</a></li>
                                 @endcan
+                                <li class="active"><a href="{{route('terciarios.index')}}">Empresas Terciarias</a></li>
+                                <li class="active"><a href="{{route('proproductos.index')}}">Proveedor de Producto</a></li>
                             </ul>
                         </li>
                         <li>
@@ -59,7 +61,7 @@
                                 @can('haveaccess','rutas.index')
                                 <li class="active"><a href="{{route('rutas.index')}}">Rutas</a></li>
                                 @endcan
-                                <li class="active"><a href="{{ route('terciarios.index') }}">Empresas terciarias</a></li>
+                                <li class="active"><a href="{{ route('productos.index') }}">Productos</a></li>
                                 <li class="active"><a href="{{route('viajes.index')}}">Programación de unidades</a></li>
                                 
                             </ul>

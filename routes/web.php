@@ -114,3 +114,12 @@ Route::get('clientesnof-list-excel', 'HomeController@exportExcelNoOF')->name('or
 
 //EMPRESAS TERCIARIAS 
 Route::resource('terciarios','EmpresasTerciariasController')->names('terciarios');
+Route::put('/terciarios/delete/{id}', 'EmpresasTerciariasController@update1')->name('terciario.update1');
+
+//PROVEEDOR PRODUCTO
+Route::resource('proproducto','ProveedorProductoController')->names('proproductos');
+Route::put('/proveedor_producto/delete/{id}', 'ProveedorProductoController@update1')->name('proproductos.update1');
+
+//PRODUCTO
+Route::resource('productos','ProductosController')->names('productos');
+Route::put('/productos/delete/{id}', 'ProductosController@update1')->name('productos.update1');

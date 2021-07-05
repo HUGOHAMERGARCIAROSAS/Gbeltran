@@ -10,11 +10,11 @@
             <div class="card" style="background: #FFFFFF">
                 <div class="header" >
                     <div style="float: left">
-                        <h2>TERCEROS</h2>
+                        <h2>PRODUCTOS</h2>
                     </div>
                     <div style="float: right">
-                        <button type="button" class="btn btn-warning" style="height: 40px" data-toggle="modal" data-target="#registerTercero">
-                            <i class="fa fa-plus"></i> NUEVO TERCERO
+                        <button type="button" class="btn btn-warning" style="height: 40px" data-toggle="modal" data-target="#registerProducto">
+                            <i class="fa fa-plus"></i> NUEVO PRODUCTO
                         </button>
                     </div>
                 </div>
@@ -24,26 +24,28 @@
                             <thead>
                                 <tr>
                                     <th>ID</th>
-                                    <th>Razón Social</th>
-                                    <th>Documento</th>
-                                    <th>Teléfono</th>
-                                    <th>Dirección</th>
+                                    <th>Nombre</th>
+                                    <th>Descripción</th>
+                                    <th>Tipo</th>
                                     <th>Opciones</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach ($terceros as $key=>$item)
+                                @foreach ($productos as $key=>$item)
                                 <tr>
                                     <td>{{$key+1}}</td>
-                                    <td>{{$item->razon_social}}</td>
-                                    <td>{{$item->ruc}}</td>
-                                    <td>{{$item->telefono}}</td>
-                                    <td>{{$item->direccion}}</td>
+                                    <td>{{$item->nombre}}</td>
+                                    <td>{{$item->descripcion}}</td>
+                                    @if($item->tipo==1)
+                                    <td>A Enviar</td>
+                                    @else
+                                    <td>A Comprar</td>
+                                    @endif
                                     <td>
-                                        <button type="button" class="btn btn-warning"  data-toggle="modal" data-target="#editarTercero{{$item->id}}">
+                                        <button type="button" class="btn btn-warning"  data-toggle="modal" data-target="#editarProducto{{$item->id}}">
                                             <i class="fa fa-plus"></i>
                                         </button>
-                                        <button type="button" class="btn btn-danger"  data-toggle="modal" data-target="#eliminarTercero{{$item->id}}">
+                                        <button type="button" class="btn btn-danger"  data-toggle="modal" data-target="#eliminarProducto{{$item->id}}">
                                             <i class="fa fa-trash"></i>
                                         </button>
                                         
@@ -58,9 +60,9 @@
             </div>
         </div>
     </div>
-    @include('pages.terciarios.modals.register_cliente')
-    @include('pages.terciarios.modals.editar_cliente')
-    @include('pages.terciarios.modals.eliminar_cliente')
+    @include('pages.productos.modals.register_cliente')
+    @include('pages.productos.modals.editar_cliente')
+    @include('pages.productos.modals.eliminar_cliente')
 </div>
 @endsection
 @section('js')

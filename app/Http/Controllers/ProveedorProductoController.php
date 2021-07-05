@@ -5,12 +5,12 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\TerciarioProveedor;
 
-class EmpresasTerciariasController extends Controller
+class ProveedorProductoController extends Controller
 {
     public function index()
     {
-        $terceros = TerciarioProveedor::where('tipo','1')->where('activo','1')->get();
-        return view('pages.terciarios.index')->with(compact('terceros'));
+        $terceros = TerciarioProveedor::where('tipo','2')->where('activo','1')->get();
+        return view('pages.proproducto.index')->with(compact('terceros'));
     }
 
     public function store(Request $request)
@@ -18,7 +18,7 @@ class EmpresasTerciariasController extends Controller
         $tercero = new TerciarioProveedor();
         $tercero->razon_social  = $request->razon_social;
         $tercero->ruc  = $request->ruc;
-        $tercero->tipo  = 1;
+        $tercero->tipo  = 2;
         $tercero->activo  = 1;
         $tercero->telefono  = $request->telefono;
         $tercero->direccion  = $request->direccion;
@@ -32,7 +32,7 @@ class EmpresasTerciariasController extends Controller
         $tercero = TerciarioProveedor::findOrFail($id);
         $tercero->razon_social  = $request->razon_social;
         $tercero->ruc  = $request->ruc;
-        $tercero->tipo  = 1;
+        $tercero->tipo  = 2;
         $tercero->telefono  = $request->telefono;
         $tercero->direccion  = $request->direccion;
 

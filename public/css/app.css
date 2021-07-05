@@ -7084,7 +7084,7 @@ button.bg-dark:focus {
 }
 
 .bg-white {
-  background-color: #fcba03 !important;
+  background-color: #fff !important;
 }
 
 .bg-transparent {
@@ -8338,7 +8338,7 @@ button.bg-dark:focus {
 }
 
 .shadow-sm {
-  box-shadow: 0 0.125rem 0.25rem #fcba03 !important;
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075) !important;
 }
 
 .shadow {
@@ -8663,7 +8663,7 @@ button.bg-dark:focus {
 
 .pt-4,
 .py-4 {
-  padding-top: 4.5rem !important;
+  padding-top: 1.5rem !important;
 }
 
 .pr-4,
@@ -10651,7 +10651,7 @@ button.bg-dark:focus {
   }
 
   .text-md-right {
-    text-align: left !important;
+    text-align: right !important;
   }
 
   .text-md-center {
