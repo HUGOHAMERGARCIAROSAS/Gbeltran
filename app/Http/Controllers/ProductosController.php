@@ -44,4 +44,8 @@ class ProductosController extends Controller
         $producto->save();
         return back();
     }
+    public function update2(Request $request)
+    {
+       dd($request);
+    }
 }

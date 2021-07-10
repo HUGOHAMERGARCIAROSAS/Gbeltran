@@ -103,8 +103,8 @@ Route::get('/pagos','CajaController@pagos');
 //ABASTECIMIENTO DE COMBUSTIBLE
 Route::resource('combustible','CombustibleController')->names('abastecimientoCombustible');
 Route::put('combustible/delete/{id}', 'CombustibleController@update1')->name('combustible.update1');
-
 Route::post('/reporte-operaciones', 'OrdenTrabajoController@buscar')->name('reporte.operaciones.consultar');
+Route::get('/abastecimientoCombustible/{id}','CombustibleController@index');
 
 //CLIENTES VIGENTES
 Route::get('clientesv-list-excel', 'HomeController@exportExcelCV')->name('clientes.vigentes.excel');
@@ -123,3 +123,19 @@ Route::put('/proveedor_producto/delete/{id}', 'ProveedorProductoController@updat
 //PRODUCTO
 Route::resource('productos','ProductosController')->names('productos');
 Route::put('/productos/delete/{id}', 'ProductosController@update1')->name('productos.update1');
+
+//GASTOS
+Route::resource('gastos','GastosController')->names('gastos');
+Route::post('/gastosTipo','GastosController@TipoGastos');
+Route::put('/gasto/delete/{id}', 'GastosController@update1')->name('gasto.updateEstado');
+Route::get('gastos/eliminar/{id}','GastosController@update2');
+Route::get('gastosAll','GastosController@gastosAll');
+Route::get('gastosTipo/{tipo}','GastosController@GastosxTipo');
+
+//LUGAR 
+Route::resource('lugar','LugarController')->names('lugares');
+Route::post('/lugaresTipo','LugarController@TipoLugares');
+Route::delete('/lugar/{id}', 'LugarController@destroy');
+
+//GASTOS-OPERATIVOS
+Route::resource('gastosOperativos','GastosOperativosController')->names('GastosOperativos');

@@ -61,8 +61,18 @@
                                 @can('haveaccess','rutas.index')
                                 <li class="active"><a href="{{route('rutas.index')}}">Rutas</a></li>
                                 @endcan
+                                <li><a href="{{ route('gastos.index') }}">Gastos</a></li>
+                                <li><a href="{{ route('lugares.index') }}">Lugares</a></li>
                                 <li class="active"><a href="{{ route('productos.index') }}">Productos</a></li>
                                 <li class="active"><a href="{{route('viajes.index')}}">Programación de unidades</a></li>
+                                
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#Widgets" class="has-arrow"><i class="icon-puzzle"></i> <span>COMPRAS</span></a>
+                            <ul>
+                                <li class="active"><a href="{{route('unidades.index')}}">PROVEEDORES</a></li>
+                               
                                 
                             </ul>
                         </li>
@@ -71,6 +81,7 @@
                             <ul>
                                 <li class="active"><a href="{{route('cajas.index')}}">Cobros Pendientes</a></li>
                                 <li class="active"><a href="/pagos">Pagos Pendientes</a></li>
+                                <li class="active"><a href="{{ route('GastosOperativos.index') }}">Gastos Operativos</a></li>
                             </ul>
                         </li>   
                         <li>

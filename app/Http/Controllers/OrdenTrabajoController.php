@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Cliente;
+use App\Lugar;
 use App\Models\Ruta;
 use App\Models\Order;
 use App\User;
@@ -23,7 +24,8 @@ class OrdenTrabajoController extends Controller
         $rutas = Ruta::get()->where('activo','1');
         $unidades = Vehiculo::get()->where('activo','1');
         $orders = Order::where('activo','1')->get();
-        return view('pages.ordenTrabajo.index')->with(compact('clientes','conductores','rutas','unidades','orders'));
+        $lugar = Lugar::where('tipo','2')->get();
+        return view('pages.ordenTrabajo.index')->with(compact('clientes','conductores','rutas','unidades','orders','lugar'));
     }
     public function create()
     {

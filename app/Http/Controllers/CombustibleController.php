@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Cliente;
+use App\Lugar;
 use App\Models\Ruta;
 use App\Models\Order;
 use App\User;
@@ -14,23 +15,24 @@ use App\Models\Combustible;
 
 class CombustibleController extends Controller
 {
-    public function index()
+    public function index($id)
     {
-        $combustibles = Combustible::where('activo','1')->get();
-        $rutas = Ruta::get();
-        $ordenes = Order::where('activo','1')->get();
-        return view('pages.combustible.index')->with(compact('combustibles','rutas','ordenes'));
+        $order=Order::where('id',$id)->where('activo','1')->get();
+        $lugar = Lugar::where('tipo','2')->get();
+       // return view('pages.combustible.index')->with(compact('combustibles','rutas','ordenes'));
+       return view('pages.ordenTrabajo.combustible')->with(compact('order','lugar'));
     }
 
 
     public function store(Request $request){
         $combustible = new Combustible();
-        $combustible->lugar  = $request->lugar;
+        $combustible->lugar_id  = $request->lugar;
         $combustible->galones  = $request->galones;
         $combustible->precio  = $request->precio;
         $combustible->nro_ticket  = $request->nro_ticket;
         $combustible->orden_trabajo_id  = $request->orden_trabajo_id;
         $combustible->activo=1;
+        $combustible->kilometros=$request->kilometros;
         if ($request->file('ticket')) {
             // dd($request->file('archivos'));
             $file = $request->file('ticket');

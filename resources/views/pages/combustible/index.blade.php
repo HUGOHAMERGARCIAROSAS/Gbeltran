@@ -34,13 +34,7 @@
                                 @foreach ($combustibles as $item)
                                     <tr>
                                         <td class="text-center">{{str_pad($item->orders->id, 6, "0", STR_PAD_LEFT)}}</td>
-                                        @if($item->lugar==1)
-                                            <td class="text-center">TRUJILLO</td>
-                                        @elseif($item->lugar==2)
-                                            <td class="text-center">BAGUA</td>
-                                        @else
-                                            <td class="text-center">OTROS</td>
-                                        @endif
+                                       <td class="text-center">{{ $item->lugar }}</td>
                                         <td class="text-center">{{$item->galones}}</td>
                                         <td class="text-center">{{$item->precio}}</td>
                                         <td class="text-center">

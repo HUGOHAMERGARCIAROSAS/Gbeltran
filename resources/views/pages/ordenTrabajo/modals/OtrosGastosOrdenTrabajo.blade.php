@@ -21,67 +21,31 @@
                 </select>
                 <div class="row">
                     <div class="col-md-4">
-                        <label>Nº LIQUIDACIÓN</label>
-                        <input class="form-control form-control-sm">
+                        <label>Fecha</label>
+                        <input class="form-control form-control-sm" type="date" >
                     </div>
                     <div class="col-md-4">
-                        <label>ALIMENTACIÓN</label>
+                        <label>Tipo Gasto Operativo</label>
                         <select class="form-control form-control-sm">
                             <option value="">BASE</option>
                             <option value="" selected>EN VIAJE</option>
                         </select>
                     </div>
                     <div class="col-md-4">
-                        <input class="form-control form-auth-sm" style="margin-top: 25px">
-                    </div>
-                    
-                    
+                        <label>Gasto Operativo</label>
+                        <input class="form-control form-auth-sm" >
+                    </div>   
                 </div>
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="table-responsive">
-                            <table class="table table-bordered">
-                                <thead>
-                                    <tr>
-                                        <th class="text-center">#</th>
-                                        <th class="text-center">Descripción</th>
-                                        <th class="text-center">Monto</th>
-                                        <th class="text-center">Opciones</th>
-                                    </tr>
-                                </thead>
-                                <tbody> 
-                                    <tr>
-                                        <td class="text-center"></td>
-                                        <td class="text-center"></td>
-                                        <td class="text-center"></td>
-                                        <td class="text-center">
-                                            {{-- <a href="{{route('cajas.edit',$item->id)}}" class="btn btn-sm btn-info"><i class="fa fa-money"></i></a> --}}
-                                            <button type="button" class="btn btn-sm btn-danger"> 
-                                                <i class="fa fa-remove"></i>
-                                             </button>
-                                        </td>
-                                    </tr>                            
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-                <hr>
-                <div class="row">
+                <div class="row" >
                     <div class="col-md-4">
-                        <label>GASTOS CON COMPROBANTES</label>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-4">
-                        <label>Peaje</label>
-                        <select class=" form-control form-control-sm"></select>
+                        <label>Importe</label>
+                        <input class="form-control form-control-sm" type="text" >
                     </div>
                     <div class="col-md-4">
-                        <input style="margin-top:32px " class="form-control form-control-sm">
+                        <input type="file" class="form-control form-auth-sm" style="margin-top: 20px">
                     </div>
                     <div class="col-md-4">
-                        <input style="margin-top:26px " type="file" class="form-control form-control-sm">
+                        <button type="button" class=" btn btn-success" style="margin-top: 23px"><i class="fa fa-plus"></i></button>
                     </div>
                 </div>
                 <div class="row">
@@ -91,150 +55,20 @@
                                 <thead>
                                     <tr>
                                         <th class="text-center">#</th>
-                                        <th class="text-center">Lugar</th>
+                                        <th class="text-center">Gasto Operativo</th>
                                         <th class="text-center">Monto</th>
                                         <th class="text-center">Opciones</th>
                                     </tr>
                                 </thead>
                                 <tbody> 
                                     <tr>
-                                        <td class="text-center"></td>
-                                        <td class="text-center"></td>
-                                        <td class="text-center"></td>
-                                        <td class="text-center">
-                                            {{-- <a href="{{route('cajas.edit',$item->id)}}" class="btn btn-sm btn-info"><i class="fa fa-money"></i></a> --}}
-                                            <button type="button" class="btn btn-sm btn-danger"> 
-                                                <i class="fa fa-remove"></i>
-                                             </button>
-                                        </td>
                                     </tr>                            
                                 </tbody>
                             </table>
                         </div>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-3">
-                        <label>Hospedaje</label>
-                        <input class="form-control" type="text" name="">
-                    </div>
-                   <div class="col-md-3">
-                       <input type="file" class="form-control form-control-file" style="margin-top:23px " >
-                   </div>
-                    <div class="col-md-3">
-                        <label>Lavado</label>  
-                        <input class="form-control" type="text" name="">         
-                    </div>
-                    <div class="col-md-3">
-                        <input type="file" class="form-control form-control-file" style="margin-top:23px ">
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-3">
-                        <label>Estiba</label>
-                        <input class="form-control" type="text" name="">
-                    </div>
-                    <div class="col-md-3">
-                        <input type="file" class="form-control form-control-file" style="margin-top:23px " >
-                    </div>
-                    <div class="col-md-3">
-                        <label>Desestiba</label>
-                        <input class="form-control" type="text" name="">
-                    </div>
-                    <div class="col-md-3">
-                        <input type="file" class="form-control form-control-file" style="margin-top:23px " >
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-3">
-                        <label>Otros</label>
-                        <input class="form-control" type="text" name="">
-                    </div>
-                </div>
-                    <div class="row">
-                        <div class="col-md-5"></div>
-                        <div class="col-md-5"></div>
-                       <div class="col-md-2" >
-                           <label>Total:</label>
-                            <label>0.00</label> 
-                        </div> 
-                    </div>
-                <hr>
-                <label>GASTOS SIN COMPROBANTES</label>
-                <div class="row">
-                    <div class="col-md-3">
-                        <label>Tramitador</label>
-                        <input class="form-control" type="text" name="">
-                    </div>
-                    <div class="col-md-3">
-                        <label>Guardiania</label>
-                        <input class="form-control" type="text" name="">
-                    </div>
-                    <div class="col-md-3">
-                        <label>Manipuleo</label>
-                        <input class="form-control" type="text" name="">
-                    </div>
-                    <div class="col-md-3">
-                        <label>Cebaf</label>
-                        <input class="form-control" type="text" name="">
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-3">
-                        <label>Carpitas</label>
-                        <input class="form-control" type="text" name="">
-                    </div>
-                    <div class="col-md-3">
-                        <label>Vitapro</label>
-                        <input class="form-control" type="text" name="">
-                    </div>
-                    <div class="col-md-3">
-                        <label>Coca</label>
-                        <input class="form-control" type="text" name="">
-                    </div>
-                    <div class="col-md-3">
-                        <label>Comisión</label>
-                        <input class="form-control" type="text" name="">
-                    </div>
-
-                </div>
-                <div class="row">
-                    <div class="col-md-3">
-                        <label>Cochera</label>
-                        <input class="form-control" type="text" name="">
-                    </div>
-                    <div class="col-md-3">
-                        <label>Tarjetas vencidas</label>
-                        <input class="form-control" type="text" name="">
-                    </div>
-                    <div class="col-md-3">
-                        <label>Taxis</label>
-                        <input class="form-control" type="text" name="">
-                    </div>
-                    <div class="col-md-3">
-                        <label>Otros</label>
-                        <input class="form-control" type="text" name="">
-                    </div>
-
                 </div>
                 
-                <div class="row">
-                    <div class="col-md-5"></div>
-                    <div class="col-md-5"></div>
-                   <div class="col-md-2" >
-                       <label>Total:</label>
-                        <label>0.00</label> 
-                    </div> 
-                </div>
-                <hr>
-                <div class="row">
-                    <div class="col-md-5"></div>
-                    <div class="col-md-5"></div>
-                   <div class="col-md-2" >
-                       <label>TOTAL:</label>
-                        <label>0.00</label> 
-                    </div> 
-                </div>
                 
             </div>
             <div class="modal-footer">

@@ -1,0 +1,4 @@
+git add . ->Subir cambios localmente
+git -m commit "Nombre de commit" ->
+git push origin NombreDeRama ->Para subir
+git pull origin NombreDeRama ->Bajar mis cambios

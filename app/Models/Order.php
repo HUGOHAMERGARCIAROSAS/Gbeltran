@@ -2,6 +2,7 @@
 
 namespace App\Models;
 use App\Cliente;
+use App\Lugar;
 use App\User;
 use Illuminate\Database\Eloquent\Model;
 
@@ -34,4 +35,8 @@ class Order extends Model
     public function sedes(){
         return $this->belongsTo(Sede::class,'sede_id');
     }
+    public function combustible(){
+        return $this->hasMany(Combustible::class,'orden_trabajo_id');
+    }
+    
 }
