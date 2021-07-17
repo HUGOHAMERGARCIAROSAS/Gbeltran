@@ -139,3 +139,10 @@ Route::delete('/lugar/{id}', 'LugarController@destroy');
 
 //GASTOS-OPERATIVOS
 Route::resource('gastosOperativos','GastosOperativosController')->names('GastosOperativos');
+
+//SALDO
+Route::resource('saldos','SaldoController')->names('saldo');
+
+
+//INICIO REPORTES
+Route::get('/utilidades','ReporteController@reporteUtilidades');

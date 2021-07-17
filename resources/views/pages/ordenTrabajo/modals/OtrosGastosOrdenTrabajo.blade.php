@@ -19,56 +19,7 @@
                 <select class=" form-control form-control-sm" name="orden_trabajo_id" style="display: none">
                     <option value="{{$item->id}}">{{ $item->id }}</option>
                 </select>
-                <div class="row">
-                    <div class="col-md-4">
-                        <label>Fecha</label>
-                        <input class="form-control form-control-sm" type="date" >
-                    </div>
-                    <div class="col-md-4">
-                        <label>Tipo Gasto Operativo</label>
-                        <select class="form-control form-control-sm">
-                            <option value="">BASE</option>
-                            <option value="" selected>EN VIAJE</option>
-                        </select>
-                    </div>
-                    <div class="col-md-4">
-                        <label>Gasto Operativo</label>
-                        <input class="form-control form-auth-sm" >
-                    </div>   
-                </div>
-                <div class="row" >
-                    <div class="col-md-4">
-                        <label>Importe</label>
-                        <input class="form-control form-control-sm" type="text" >
-                    </div>
-                    <div class="col-md-4">
-                        <input type="file" class="form-control form-auth-sm" style="margin-top: 20px">
-                    </div>
-                    <div class="col-md-4">
-                        <button type="button" class=" btn btn-success" style="margin-top: 23px"><i class="fa fa-plus"></i></button>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="table-responsive">
-                            <table class="table table-bordered">
-                                <thead>
-                                    <tr>
-                                        <th class="text-center">#</th>
-                                        <th class="text-center">Gasto Operativo</th>
-                                        <th class="text-center">Monto</th>
-                                        <th class="text-center">Opciones</th>
-                                    </tr>
-                                </thead>
-                                <tbody> 
-                                    <tr>
-                                    </tr>                            
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-                
+                <gasto-component/> 
                 
             </div>
             <div class="modal-footer">
@@ -80,3 +31,12 @@
     </div>
   </div>
 @endforeach
+@section('js')
+<script>
+  //var tipoPago=1;
+  function GetGasto(){
+      tipoG=document.getElementById("tipoGasto").value;
+     
+    }
+</script>
+@endsection

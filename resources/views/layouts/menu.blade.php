@@ -88,9 +88,6 @@
                             <a href="#Widgets" class="has-arrow"><i class="icon-puzzle"></i> <span>ALMACEN</span></a>
                         </li>
                         <li>
-                            <a href="#Authentication" class="has-arrow"><i class="icon-lock"></i> <span>UTILIDAD</span></a>
-                        </li>
-                        <li>
                             <a href="{{route('proveedores.index')}}" class="has-arrow"><i class="icon-folder"></i> <span>PROVEEDORES</span></a>
                         </li>
                         <li>
@@ -102,6 +99,12 @@
                                 @can('haveaccess','documentosV.index')
                                 <li class="active"><a href="{{route('documentosV.index')}}">Documento de Vehículo</a></li>
                                 @endcan
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#" class="has-arrow"><i class="fa fa-file-excel-o"></i><span>REPORTES</span></a>
+                            <ul>
+                                <li class="active"><a href="/utilidades"></a>Utilidad</li>
                             </ul>
                         </li>
                     </ul>

@@ -1,9 +1,12 @@
 @extends('layouts.layout')
+@extends('layouts.app')
 @section('css')
 @include('layouts.css')
 
 @endsection
 @section('content')
+
+
 <div class="container-fluid">
     @include('layouts.welcome')
     <div class="row clearfix">
@@ -27,7 +30,7 @@
                                 <label>Fecha Inicio</label>
                                 <input type="date" class="form-control" name='fecha_ini'>
                             </div> 
-                            <div class="col-3">
+                            <div class="col-3" >
                                 <label>Fecha Fin</label>
                                 <input type="date" class="form-control" name='fecha_fin'>
                             </div> 
@@ -85,10 +88,13 @@
                             </tbody>
                         </table>
                     </div>
+                    <!--<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+                    <script type="text/javascript" src="{{ asset('js/saldo.js') }}"></script>-->
                 </div>
             </div>
         </div>
     </div>
+    
     @include('pages.ordenTrabajo.modals.register_ordenTrabajo')
     @include('pages.ordenTrabajo.modals.register_kilometros_pesos')
     @include('pages.ordenTrabajo.modals.update_ordenTrabajo')
@@ -114,6 +120,7 @@ $('#isAgeSelected').click(function() {
     $("#txtAge").toggle(this.checked);
     $("#txtAge2").toggle(this.checked);
 });
+
 </script>
 
 @endsection

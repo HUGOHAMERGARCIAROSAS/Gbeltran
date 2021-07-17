@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Cliente;
+use App\Gastos;
 use App\Lugar;
 use App\Models\Ruta;
 use App\Models\Order;
@@ -77,5 +78,8 @@ class CombustibleController extends Controller
         // $user->usuario_deleted  = $request->usuario_deleted;
         $user->save();
         return back();
+    }
+    public function gastosTipo($tipo){
+          //  $gastos=Gastos::where()
     }
 }

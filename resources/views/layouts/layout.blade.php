@@ -42,6 +42,7 @@
 
 <script src="{{asset('js/mainscripts.bundle.js')}}"></script>
 <script src="{{asset('js/index.js')}}"></script>
+
 @yield('js')
 </body>
 
